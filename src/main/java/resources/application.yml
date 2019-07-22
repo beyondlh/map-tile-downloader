@@ -1,0 +1,10 @@
+server:
+  port: 7012
+datastore:
+  dbtype: postgis
+  host: 192.168.0.204
+  port: 5432
+  database: GIS_LW
+  schema: public
+  user: GIS_LW
+  passwd: GIS_LW

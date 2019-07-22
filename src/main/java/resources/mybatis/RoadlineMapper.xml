@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "/xsd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdsx.traffic.flow.database.mapper.RoadlineMapper">
+
+    <resultMap id="RoadlineMap" type="Roadline">
+        <id column="guid" property="guid"/>
+        <result column="lxbm" property="roadcode"/>
+        <result column="lxmc" property="roadname"/>
+        <result column="qdzh" property="startmile"/>
+        <result column="zdzh" property="endmile"/>
+        <result column="sxxfx" property="sxxfx"/>
+        <result column="wktString" property="wktString"/>
+    </resultMap>
+    <select id="queryList" resultMap="RoadlineMap">
+        SELECT guid,lxbm,lxmc,qdzh ,zdzh ,sxxfx,ST_AsText(geom) AS wktString  FROM traffic_network_hn_baidu
+    </select>
+
+</mapper>

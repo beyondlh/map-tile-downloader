@@ -1,10 +1,17 @@
 server:
   port: 7012
-datastore:
-  dbtype: postgis
-  host: 192.168.0.204
-  port: 5432
-  database: GIS_LW
-  schema: public
-  user: GIS_LW
-  passwd: GIS_LW
+
+map:
+  resolutions: 611.4962262814103659844637663726452,
+    305.7481131407051829922318831863226,
+    152.8740565703525914961159415931613,
+    76.43702828517629241602672079658197
+    tileSize: 256, 256
+    extent: -53948.0500166734, 2539950.17273398, 256021.047485764, 2951140.47065904
+    origin: -53948.0500166734, 2951140.47065904
+    offsetZoom: 0, //resolutions如果设置了某一部分级别，必须要设置这个偏移量;
+    type: "gaode",  //和高德地图的情况一样，用TMS规则下载就没有问题？
+    url: http://172.16.231.131:8081/geoesb/proxy/2c2565001bd4410581f0a7afa0803ee2/544526ce713b44598a8ae84770c98e4e?request=GetCapabilities&service=wmts&layer=ZDYGovMap&style=default&tilematrixset=CustomCRS0ScaleZDYGovMap&Service=WMTS&Request=getTile&Version=1.0.0&Format=image/png&TileMatrix={z}&TileRow={y}&TileCol={x}
+    runThreadCount: 2,
+    savePath: ""
+

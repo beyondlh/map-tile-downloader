@@ -20,9 +20,10 @@ public class LimitedQueue<T> extends LinkedList<T> {
 	}
 
 	public final void Enqueue(T item) {
-		if (this.size() >= this.getLimit())
-		{
-			this.removeFirst();
+		if (this.size() >= this.getLimit()) {
+			if(this.size()>0){
+				this.removeFirst();
+			}
 		}
 		super.offer(item);
 	}
